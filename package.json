@@ -1,0 +1,48 @@
+{
+  "name": "line-bot-nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "nodemon src/index.js --exec babel-node -e js",
+    "clean": "rm -rf dist",
+    "build": "npm run clean && mkdir dist && babel src -s -d dist --copy-files",
+    "prod": "export NODE_ENV=production||set NODE_ENV=production&&npm run build&&node dist/index.js",
+    "serv": "node dist/index.js",
+    "lint": "eslint src/ --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/somprasongd/line-bot-nodejs.git"
+  },
+  "keywords": [],
+  "author": "Somprasong Damyos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/somprasongd/line-bot-nodejs/issues"
+  },
+  "homepage": "https://github.com/somprasongd/line-bot-nodejs#readme",
+  "dependencies": {
+    "@line/bot-sdk": "^6.8.0",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "express-async-errors": "^3.1.1",
+    "express-graceful-shutdown": "^1.0.0",
+    "joi": "^14.3.1",
+    "raven": "^2.6.4",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "eslint": "^5.1.0",
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-prettier": "^2.6.2",
+    "nodemon": "^1.17.5",
+    "prettier": "^1.13.7"
+  }
+}
